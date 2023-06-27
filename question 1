@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<int> arraysIntersection(vector<int>& arr1, vector<int>& arr2, vector<int>& arr3) {
+        vector<int> arr12 = helper(arr1, arr2);
+        return helper(arr12, arr3);
+    }
+
+private: 
+    vector<int> helper(vector<int>& arr1, vector<int>& arr2) {
+        int i1 = 0, i2 = 0;
+        vector<int> ret;
+        while (i1 < arr1.size() && i2 < arr2.size()) {
+            if (arr1[i1] == arr2[i2]) {
+                ret.push_back(arr1[i1]);
+                ++i1;
+                ++i2;
+            } else if (arr1[i1] < arr2[i2]) {
+                ++i1;
+            } else {
+                ++i2;
+}
+}  
+return ret;
+}
+}
